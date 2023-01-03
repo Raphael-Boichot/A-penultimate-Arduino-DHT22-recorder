@@ -6,4 +6,8 @@ This device is intended to be lost somewhere for long time recording. I've tried
 
 To what I understand, pinout for SD card must be strict on Arduino as only CS can be changed, so refer to the pinout given in the project.
 
+# The thing as I made it
 ![](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/blob/main/IMG_20230103_142314.jpg)
+
+# The pinout stolen [here](https://microcontrollerslab.com/dht22-data-logger-arduino-micro-sd-card/)
+![](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/blob/main/Arduino-with-DHT22-and-microSD-card-schematic-diagram.jpg)
