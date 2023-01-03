@@ -4,4 +4,4 @@ Nothing fancy but it does the job of recording temperature and humidity every mi
 
 This device is intended to be lost somewhere for long time recording. I've tried it for recording during two consecutive weeks without reboot, it worked.
 
-[](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/blob/main/IMG_20230103_142314.jpg)
+![](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/blob/main/IMG_20230103_142314.jpg)
