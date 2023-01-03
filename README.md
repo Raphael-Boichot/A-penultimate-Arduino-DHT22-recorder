@@ -11,3 +11,4 @@ To what I understand, pinout for SD card must be strict on Arduino as only CS ca
 
 # The pinout stolen [here](https://microcontrollerslab.com/dht22-data-logger-arduino-micro-sd-card/)
 ![](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/blob/main/Arduino-with-DHT22-and-microSD-card-schematic-diagram.jpg)
+As far as I experienced the DHT22, the pullup resistance can be removed.
