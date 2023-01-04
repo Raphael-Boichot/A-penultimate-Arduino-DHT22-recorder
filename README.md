@@ -1,8 +1,8 @@
 # A penultimate Arduino DHT22 recorder on SD card
 
-Nothing fancy but it does the job of recording temperature and humidity every minute. The txt file format on SD card is voluntarily simple in order to read it easily with Matlab. Another Matlab code allows reading and plotting live data. If the SD card is not available, the code just continues outputting data to the serial and ignore the SD card. This means that the SD card can be removed at any time during recording to plot data on a computer for example. In this case, the Arduino just sends a red flash to indicate that it runs without the SD connected. The writing continues on the same file as soon as the SD card is connected again.
+Nothing fancy but it does the job of recording temperature and humidity every minute. The txt file format on SD card is voluntarily simple in order to read it easily with Matlab. Another Matlab code allows reading and plotting live data. If the SD card is not available, the code just continues outputting data to the serial and ignore the SD card. This means that the SD card can be removed at any time during recording to plot data on a computer for example. In this case, the Arduino just sends a red flash to indicate that it runs without the SD connected. The writing continues on the same file as soon as the SD card is connected again. It is not sensitive to power shutdown as it will reboot in exactly the same state everytime.
 
-This device is intended to be lost somewhere for long time recording. I've tried it for recording during two consecutive weeks without reboot, it worked.
+This device is intended to be lost somewhere for long time recording. I've tried it for recording two consecutive weeks of temperature and humidity without reboot, it worked.
 
 To what I understand, pinout for SD card must be strict on Arduino as only Chip Select pin can be changed, so refer to the pinout given in the project. If you use an SD shield, CS may differ (it's generally 6 or 10 by default).
 
