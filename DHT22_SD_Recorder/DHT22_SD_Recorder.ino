@@ -32,7 +32,8 @@ File myFile;
 int RED_LED = 5;
 int GREEN_LED = 4;
 int CHIP_SELECT = 10;//may be different if you use a SD shield (generally 6 if not 10)
-int delay_seconds = 10;//enter delay between measurements in seconds here. The time constant of the sensor itself is about 5 minutes
+int delay_seconds = 60;//enter delay between measurements in seconds here. 
+//The time constant of the sensor itself is about 2-3 minutes
 int def_LED, SD_ready;
 String Temperature, Humidity, Data;
 
