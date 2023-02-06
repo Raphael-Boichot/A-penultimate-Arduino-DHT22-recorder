@@ -32,7 +32,8 @@ File myFile;
 int RED_LED = 5;
 int GREEN_LED = 4;
 int CHIP_SELECT = 10;//may be different if you use a SD shield (generally 6 if not 10)
-unsigned long delay_s = 60;//enter delay between measurements in seconds here. 
+unsigned long delay_s = 60;//enter delay between measurements in seconds here.
+unsigned long preceding_time, preceding_timeLED;
 //The time constant of the sensor itself is about 2-3 minutes
 int def_LED, SD_ready;
 String Temperature, Humidity, Data;
@@ -44,18 +45,18 @@ void setup() {
   dht.begin() ;
   Serial.println("Initializing SD card...");
   if (!SD.begin(CHIP_SELECT)) {
-  Serial.println("SD initialization failed !");
-  SD_ready = 0;
+    Serial.println("SD initialization failed !");
+    SD_ready = 0;
   }
   else {
-  Serial.println("SD initialization OK !");
-  SD_ready = 1;
+    Serial.println("SD initialization OK !");
+    SD_ready = 1;
   }
-  
+
   if (SD_ready == 1) {
     def_LED = GREEN_LED;
   }
-    else {
+  else {
     def_LED = RED_LED;
   }
 
@@ -65,19 +66,35 @@ void setup() {
     digitalWrite(def_LED, 0);
     delay(100);
   }
-
+  preceding_time = millis();
+  preceding_timeLED = millis();
 }
 
 void loop() {
-  if ( isnan (dht.readTemperature ( ) ) || isnan (dht.readHumidity ( ) ) )
-  {
-    Serial.println ("DHT22 Sensor not working !") ;
+  while (1) {
+
+    if ((millis() - preceding_timeLED) >= (1000)) {//just to indicate that the device is running
+      preceding_timeLED = millis();
+      digitalWrite(RED_LED, 1);
+      digitalWrite(GREEN_LED, 1);
+      delayMicroseconds(500);
+      digitalWrite(RED_LED, 0);
+      digitalWrite(GREEN_LED, 0);
+    }
+
+    if ((millis() - preceding_time) >= (delay_s * 1000)) {//measure temperature once evey delay_s seconds
+      preceding_time = millis();
+      if ( isnan (dht.readTemperature ( ) ) || isnan (dht.readHumidity ( ) ) )
+      {
+        Serial.println ("DHT22 Sensor not working !") ;
+      }
+      else
+      {
+        data_logging();
+      }
+      break;
+    }
   }
-  else
-  {
-    data_logging();
-  }
-  delay(delay_s*1000);
 }
 
 void data_logging()
@@ -93,13 +110,13 @@ void data_logging()
   if (!SD.begin(CHIP_SELECT)) {
     Serial.println("Writing failed, card not connected!");
     digitalWrite(RED_LED, 1);
-    delay(25);
+    delay(250);
     digitalWrite(RED_LED, 0);
   }
   else {
     myFile = SD.open("data.txt", FILE_WRITE);
     digitalWrite(GREEN_LED, 1);
-    delay(25);
+    delay(250);
     digitalWrite(GREEN_LED, 0);
     Serial.print("Writing to data.txt... ");
     myFile.println(Data);
