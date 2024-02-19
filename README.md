@@ -10,7 +10,7 @@ To what I understand, pinout for SD card must be strict on Arduino as only Chip 
 - An [Arduino Uno](https://fr.aliexpress.com/item/1005006088733150.html), the cheaper the better;
 - A [generic SD shield](https://fr.aliexpress.com/item/1005006005013220.html) (regular or micro, does not care);
 - A [DHT22 module with everything integrated](https://fr.aliexpress.com/item/1005005996195284.html). The red AM2302 stuff is the one I used;
-- Two leds and two 220 Ohms resistors. In fact the Arduino D pins are current limited to 20 mA so no resistor is probably OK too (I used none).
+- Two leds and two 220 Ohms resistors. In fact the Arduino D pins are current limited to 20 mA so no resistor is probably OK too (I used none because I don't care).
 
 ## The pinout
 ![](/Schematic_DHT22.png)
