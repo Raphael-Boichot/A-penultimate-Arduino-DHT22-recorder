@@ -1,6 +1,8 @@
 /*
   Code adapted from here by Raphaël BOICHOT, january 2023
   https://microcontrollerslab.com/dht22-data-logger-arduino-micro-sd-card/
+  to be used with:
+  https://github.com/adafruit/DHT-sensor-library
   pinout Arduino to SD
   GND<->GND
   +5V<->+5V
