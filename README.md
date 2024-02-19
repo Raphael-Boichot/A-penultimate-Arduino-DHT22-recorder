@@ -13,10 +13,10 @@ To what I understand, pinout for SD card must be strict on Arduino as only Chip 
 - Two leds and two 220 Ohms resistors. In fact the Arduino D pins are current limited to 20 mA so no resistor is probably OK too (I used none because I don't care).
 
 ## The pinout
-![](/Schematic_DHT22.png)
+![](Pictures/Schematic_DHT22.png)
 
 ## The thing as I made it, be impressed !
-![](/IMG_20230103_142314.jpg)
+![](Pictures/Image_of_the_device.png)
 
 ## Funfact
 If this device did not generate energy savings for the moment, it at least proved that the energy saving closure of a certain university during a certain gas war in Europe was only a political display since the heating remained on full blast during the entire closure. 
