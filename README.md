@@ -15,7 +15,7 @@ To what I understand, pinout for SD card must be strict on Arduino as only Chip 
 ## The pinout
 ![](Pictures/Schematic_DHT22.png)
 
-## The thing as I made it, be impressed !
+## The thing as I made it on a generic Arduino prototyping board
 ![](Pictures/Image_of_the_device.png)
 
 ## Funfact
