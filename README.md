@@ -1,5 +1,7 @@
 ## Yet another Arduino DHT22 automatic recorder on SD card
-Nothing fancy but it does the job of recording temperature and humidity every minute. This device is intended to be lost somewhere for long time recording. I've tried it for recording two consecutive weeks of temperature and humidity without reboot, it worked. Current draw is very minimal and it can run for days on a powerbank.
+
+## Why ?
+Because I was not satisfied by other projects for my particular need: recording temperature and humidity every minute for very long (weeks) in remote area. This device is so intended to be lost somewhere for long time recording. I've tried it for recording two consecutive weeks of temperature and humidity without reboot, it worked. Current draw is very minimal and it can run for days/weeks on a powerbank.
 
 ## How to use it
 - Flash the device with the Arduino IDE and install the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library);
@@ -10,7 +12,7 @@ Nothing fancy but it does the job of recording temperature and humidity every mi
 - When finished, data can be plotted with the Matlab code provided but any other code would work as the data format is very simple;
 - Additionnaly another Matlab code provided allows data recording live from the serial port (it writes data to SD card anyway).
  
-## Parts and depedencies needed
+## Parts needed
 - An [Arduino Uno](https://fr.aliexpress.com/item/1005006088733150.html), the cheaper the better;
 - A [generic SD shield](https://fr.aliexpress.com/item/1005006005013220.html) (regular or micro, just check for the presence of a 3.3 volts regulator on board);
 - A [DHT22 module with everything integrated](https://fr.aliexpress.com/item/1005005996195284.html). The red AM2302 stuff is the one I used;
