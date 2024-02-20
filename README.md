@@ -7,8 +7,8 @@ Nothing fancy but it does the job of recording temperature and humidity every mi
 - Both LEDs flash every second very briefly to verify that the device is alive;
 - After one minute, it writes temperature and humidity on the SD card, green LED flashing, SD card ready, red LED, SD card not ready. Data also sent to the serial in any case;
 - The cycle goes on as long as the SD card is not full. The SD card can be removed and hot plugged again to check data during acquisition without rebooting the device. Other said, it can work with or without SD card inserted;
-- When finished, data can be plotted with the Matlab code provided but any other code would work as the data format os very simple;
-- Additionnaly another Matlab code allows data recording live from the serial port (it writes to SD anyway).
+- When finished, data can be plotted with the Matlab code provided but any other code would work as the data format is very simple;
+- Additionnaly another Matlab code provided allows data recording live from the serial port (it writes to SD anyway).
  
 ## Parts and depedencies needed
 - An [Arduino Uno](https://fr.aliexpress.com/item/1005006088733150.html), the cheaper the better;
