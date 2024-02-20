@@ -4,7 +4,8 @@
 Because I was not satisfied by other projects for my particular need: recording temperature and humidity every minute for very long (weeks) in remote area. This device is so intended to be lost somewhere and survive power failures without much consequences on data stored. I've tried it for recording two consecutive weeks of temperature and humidity without reboot, it worked. Current draw is very minimal and it can run for days/weeks on a powerbank.
 
 ## How to use it
-- Flash the device with the Arduino IDE and install the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library);
+- Install the [Arduino IDE](https://www.arduino.cc/en/software) and the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library) library;
+- Flash the code to the device; 
 - Power on with SD card inserted. Green LED flashing, SD card ready, red LED flashing, SD card not ready. If "data.txt" does not exist on SD card, it creates it. If SD card is not inserted, it continues anyway;
 - Both LEDs flash every second very briefly to verify that the device is alive;
 - After one minute, it writes temperature and humidity on the SD card, green LED flashing, SD card ready, red LED, SD card not ready. Data also sent to the serial in any case;
