@@ -6,8 +6,8 @@ Because I was not satisfied by other similar projects for my particular need: re
 ## How to use it
 - Install the [Arduino IDE](https://www.arduino.cc/en/software) and the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library) library from the library manager;
 - Flash the .ino code to the device, it will start immediately; 
-- Boot with SD card inserted. Green LED flashing, SD card ready, red LED flashing, SD card not ready. If "data.txt" does not exist on SD card, it creates it automatically. If SD card is not inserted, it continues anyway;
-- Both LEDs flash every second very briefly to verify that the device is alive;
+- Boot with SD card inserted. Green LED flashing, SD card ready, red LED flashing, SD card not ready. If "data.txt" does not exist on SD card, it creates it automatically. If SD card is not inserted, it continues anyway. the text "00.00 00.00" is written one time at every boot to mark the event (this signifies that you can reboot voluntarily to mark certain events);
+- One of the two color LED flashes every second very briefly to indicate the status of SD card. Status is updated at every attempt to write on SD card;
 - After one minute, it writes temperature and humidity on the SD card by appending on "data.txt", green LED flashing, SD card ready, red LED, SD card not ready. Data also sent to the serial in any case;
 - The cycle goes on as long as the SD card is not full, which may never happen in real life. The SD card can be removed and hot plugged again to check data during acquisition without rebooting the device. Other said, it can work with or without SD card inserted;
 - When finished, data can be plotted with the Matlab code provided but any other code would work as the data format is very simple;
