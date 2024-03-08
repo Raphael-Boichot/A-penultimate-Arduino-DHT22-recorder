@@ -28,5 +28,8 @@ To what I understand, pinout for SD card must be strict on Arduino and only Chip
 ## The thing as I made it on the official Arduino prototyping board because my lab is rich
 ![](Pictures/Image_of_the_device.png)
 
+## To do (maybe)
+- Add a real time clock (RTC) module
+
 ## Funfact
-If this device did not generate energy savings for the moment, it at least proved that the energy saving closure of a certain university during a certain gas war in Europe was only a political display since the heating remained on full blast during the entire closure. 
+If this device did not generate energy savings for the moment, it at least proved that the energy saving closure of a certain French university during two consecutive winters was only a political display since the heating remained on full blast during the entire closure.
