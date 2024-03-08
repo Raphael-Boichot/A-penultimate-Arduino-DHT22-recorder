@@ -28,7 +28,7 @@ To what I understand, pinout for SD card must be strict on Arduino and only Chip
 ## The thing as I made it on the official Arduino prototyping board because my lab is rich
 ![](Pictures/Image_of_the_device.png)
 
-## To do (in progress)
+## To do (Aliexpress order made, not much)
 - Add a [real time clock (RTC) module](https://fr.aliexpress.com/item/1005005973972157.html) support to the device.
 
 ## Funfact
