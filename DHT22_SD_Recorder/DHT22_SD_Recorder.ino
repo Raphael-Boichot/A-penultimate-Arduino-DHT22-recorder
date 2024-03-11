@@ -37,33 +37,33 @@ int CHIP_SELECT = 10;        //may be different if you use a SD shield (generall
 unsigned long delay_s = 60;  //enter delay between measurements in seconds here.
 unsigned long preceding_time, preceding_timeLED;
 //The time constant of the sensor itself is about 2-3 minutes
-int def_LED, SD_ready;
+int def_LED;
 String Temperature, Humidity, Data;
 
 void setup() {
   pinMode(RED_LED, OUTPUT);
   pinMode(GREEN_LED, OUTPUT);
   Serial.begin(115200);
+  def_LED = GREEN_LED;
+  Serial.println("Initializing DHT22 sensor...");
   dht.begin();
+  if (isnan(dht.readTemperature()) || isnan(dht.readHumidity())) {
+    Serial.println("DHT22 Sensor not working !");
+    def_LED = RED_LED;
+  }
+
   Serial.println("Initializing SD card...");
   if (!SD.begin(CHIP_SELECT)) {
     Serial.println("SD initialization failed !");
-    SD_ready = 0;
+    def_LED = RED_LED;
   } else {
     Serial.println("SD initialization OK !");
-    SD_ready = 1;
-    Data  = "00.00 00.00"; //this is just to detect reboot or loss of power during acquisition
+    Data = "00.00 00.00";  //this is just to detect reboot or loss of power during acquisition
     myFile = SD.open("data.txt", FILE_WRITE);
     Serial.print("Writing marker to data.txt... ");
     myFile.println(Data);
     myFile.close();
     Serial.println("done.");
-  }
-
-  if (SD_ready == 1) {
-    def_LED = GREEN_LED;
-  } else {
-    def_LED = RED_LED;
   }
 
   for (int j = 0; j < 10; j++) {
@@ -90,6 +90,7 @@ void loop() {
       preceding_time = millis();
       if (isnan(dht.readTemperature()) || isnan(dht.readHumidity())) {
         Serial.println("DHT22 Sensor not working !");
+        def_LED = RED_LED;
       } else {
         data_logging();
       }
