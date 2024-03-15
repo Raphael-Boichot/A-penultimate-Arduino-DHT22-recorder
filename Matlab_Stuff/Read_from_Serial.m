@@ -13,7 +13,6 @@ figure('Position',[200 200 800 600]);
 while true
     data = readline(arduinoObj);
     disp(data)
-
     if not(isempty(strfind(data,'Temperature:')));
         a=char(data);
         disp('DATA packet received !')
@@ -38,5 +37,4 @@ while true
         drawnow
         saveas(gcf,'Plot.png');
     end
-
 end
