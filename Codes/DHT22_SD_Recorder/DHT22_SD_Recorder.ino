@@ -1,37 +1,19 @@
 /*
-  Code adapted from here by Raphaël BOICHOT, january 2023
+  Code adapted initially from here by Raphaël BOICHOT, january 2023, use at your own risk
   https://microcontrollerslab.com/dht22-data-logger-arduino-micro-sd-card/
-  to be used with:
+  to be used with the following libraries:
   https://github.com/adafruit/DHT-sensor-library
   https://github.com/adafruit/RTClib
-
-  pinout Arduino to SD
-  GND<->GND
-  +5V<->+5V
-  D10<->CS
-  D11<->MOSI
-  D12<->MISO
-  D13<->SCK
-
-  Arduino to DHT22
-  GND<->GND
-  +5V<->VCC
-  D2<->DAT
-
-  Arduino to LEDS
-  GND<->led cathodes
-  D4<->green led anode
-  D5<->red led anode
-
-  Arduino to RTC (DS3231)
-  A4 or SDA<->SCL
-  A5 or SCL<->SDA
-  GND<->GND
-  +5V<->VCC
-  SQW not connected
-  32K not connected
-*/
-
+------------------------------------------------------------------------------------------------------
+  pinout Arduino to SD   |  Arduino to DHT22   |    Arduino to LEDS        |   Arduino to RTC (DS3231)
+  GND<->GND              |  GND<->GND          |    GND<->led cathodes     |   A4 or SDA<->SCL
+  +5V<->+5V              |  +5V<->VCC          |    D4<->green led anode   |   A5 or SCL<->SDA
+  D10<->CS               |  D2<->DAT           |    D5<->red led anode     |   GND<->GND
+  D11<->MOSI             |                     |                           |   +5V<->VCC
+  D12<->MISO             |                     |                           |   SQW not connected
+  D13<->SCK              |                     |                           |   32K not connected
+-------------------------------------------------------------------------------------------------------
+ */
 #include "SD.h"
 #include <SPI.h>
 #include "DHT.h"
