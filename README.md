@@ -21,7 +21,7 @@ Because I was not satisfied by other similar projects for my particular need: re
 
 To what I understand, pinout for SD card must be strict on Arduino and only Chip Select pin (CS) can be moved, so refer to the pinout given in the project. If you use an SD shield with included prototyping board, CS may differ (it's generally 4, 6 or 10 by default).
   
-## The pinout
+## The pinout (yes I like Powerpoint)
 ![](Pictures/Schematic_DHT22.png)
 
 ## The PCB that comes with the project (for Arduino Uno)
