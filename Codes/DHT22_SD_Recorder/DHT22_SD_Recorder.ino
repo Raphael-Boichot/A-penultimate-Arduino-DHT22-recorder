@@ -46,7 +46,7 @@ File myFile;
 
 int RED_LED = 5;
 int GREEN_LED = 4;
-int CHIP_SELECT = 10;        //may be different if you use a SD shield (generally 6 if not 10)
+int CHIP_SELECT = 10;        //may be different if you use a SD shield (generally 4 or 6 if not 10)
 unsigned long delay_s = 60;  //enter delay between measurements in seconds here.
 unsigned long preceding_time, preceding_timeLED;
 //The time constant of the sensor itself is about 2-3 minutes
@@ -58,31 +58,32 @@ void setup() {
   pinMode(GREEN_LED, OUTPUT);
   Serial.begin(115200);
   def_LED = GREEN_LED;
-
-  Serial.println(F("Initializing DHT22 sensor..."));
+  Serial.println(F("// By Raphaël BOICHOT, March 2024"));
+  Serial.println(F("// This program comes with ABSOLUTELY NO WARRANTY;"));
+  Serial.println(F("// This is free software, and you are welcome to redistribute it"));
+  Serial.println(F("// Initializing DHT22 sensor..."));
   dht.begin();
   if (isnan(dht.readTemperature()) || isnan(dht.readHumidity())) {
-    Serial.println(F("DHT22 Sensor not working !"));
+    Serial.println(F("// DHT22 Sensor not working !"));
     def_LED = RED_LED;
   }
 
-  Serial.println(F("Initializing SD card..."));
+  Serial.println(F("// Initializing SD card..."));
   if (!SD.begin(CHIP_SELECT)) {
-    Serial.println(F("SD initialization failed !"));
+    Serial.println(F("// SD initialization failed !"));
     def_LED = RED_LED;
   } else {
-    Serial.println("SD initialization OK !");
+    Serial.println(F("// SD initialization OK !"));
     Data = F("The device has restarted following a power cut");  //this is just to detect reboot or loss of power during acquisition
     myFile = SD.open("data.txt", FILE_WRITE);
-    Serial.print(F("Writing marker to data.txt..."));
+    Serial.println(F("// Writing power down marker to data.txt..."));
     myFile.println(Data);
     myFile.close();
-    Serial.println("done.");
   }
 
-  Serial.println(F("Initializing RTC module..."));
+  Serial.println(F("// Initializing RTC module..."));
   if (!rtc.begin()) {
-    Serial.println(F("RTC module not responding !"));
+    Serial.println(F("// RTC module not responding !"));
     def_LED = RED_LED;
   }
 
@@ -102,14 +103,14 @@ void loop() {
     if ((millis() - preceding_timeLED) >= (1000)) {  //just to indicate that the device is running
       preceding_timeLED = millis();
       digitalWrite(def_LED, 1);
-      delay(100);
+      delay(10);
       digitalWrite(def_LED, 0);
     }
 
     if ((millis() - preceding_time) >= (delay_s * 1000)) {  //measure temperature once evey delay_s seconds
       preceding_time = millis();
       if (isnan(dht.readTemperature()) || isnan(dht.readHumidity())) {
-        Serial.println(F("DHT22 Sensor not working !"));
+        Serial.println(F("// DHT22 Sensor not working !"));
         def_LED = RED_LED;
       } else {
         data_logging();
@@ -123,7 +124,7 @@ void data_logging() {
   String Temperature = String(dht.readTemperature(), 2);
   String Humidity = String(dht.readHumidity(), 2);
   if (!rtc.begin()) {
-    Serial.println(F("RTC module not responding !"));
+    Serial.println(F("// RTC module not responding !"));
     def_LED = RED_LED;
   }
   DateTime date = rtc.now();
@@ -137,7 +138,7 @@ void data_logging() {
 
   Serial.println(Data);
   if (!SD.begin(CHIP_SELECT)) {
-    Serial.println(F("Writing failed, card not connected !"));
+    Serial.println(F("// Writing failed, card not connected !"));
     def_LED = RED_LED;
     digitalWrite(def_LED, 1);
     delay(200);
