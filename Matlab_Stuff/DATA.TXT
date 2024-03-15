@@ -1,0 +1,92 @@
+Temperature: 23.40 Humidity: 45.10 Date/Time: 2024-03-15 10:38:46
+Temperature: 23.40 Humidity: 45.00 Date/Time: 2024-03-15 10:38:56
+Temperature: 23.40 Humidity: 45.00 Date/Time: 2024-03-15 10:39:06
+Temperature: 23.40 Humidity: 45.10 Date/Time: 2024-03-15 10:39:16
+Temperature: 23.40 Humidity: 45.00 Date/Time: 2024-03-15 10:39:26
+The device has restarted following a power cut
+The device has restarted following a power cut
+Temperature: 23.50 Humidity: 45.00 Date/Time: 2024-03-15 10:39:49
+Temperature: 23.50 Humidity: 45.00 Date/Time: 2024-03-15 10:39:58
+Temperature: 23.50 Humidity: 45.10 Date/Time: 2024-03-15 10:40:07
+Temperature: 23.50 Humidity: 44.80 Date/Time: 2024-03-15 10:49:43
+Temperature: 23.60 Humidity: 44.90 Date/Time: 2024-03-15 10:49:52
+Temperature: 23.50 Humidity: 44.90 Date/Time: 2024-03-15 10:50:01
+The device has restarted following a power cut
+The device has restarted following a power cut
+Temperature: 23.50 Humidity: 44.90 Date/Time: 2024-03-15 10:50:27
+Temperature: 23.50 Humidity: 44.80 Date/Time: 2024-03-15 10:50:36
+Temperature: 23.50 Humidity: 44.70 Date/Time: 2024-03-15 10:50:45
+Temperature: 23.50 Humidity: 44.70 Date/Time: 2024-03-15 10:50:54
+Temperature: 23.50 Humidity: 44.60 Date/Time: 2024-03-15 10:51:03
+Temperature: 23.50 Humidity: 44.60 Date/Time: 2024-03-15 10:51:12
+Temperature: 23.50 Humidity: 44.50 Date/Time: 2024-03-15 10:51:21
+Temperature: 23.50 Humidity: 44.50 Date/Time: 2024-03-15 10:51:30
+Temperature: 24.10 Humidity: 44.20 Date/Time: 2024-03-15 11:05:33
+Temperature: 24.10 Humidity: 44.10 Date/Time: 2024-03-15 11:05:42
+Temperature: 24.10 Humidity: 44.20 Date/Time: 2024-03-15 11:05:51
+Temperature: 24.10 Humidity: 44.20 Date/Time: 2024-03-15 11:06:00
+The device has restarted following a power cut
+Temperature: 24.10 Humidity: 44.20 Date/Time: 2024-03-15 11:06:13
+Temperature: 24.10 Humidity: 44.20 Date/Time: 2024-03-15 11:06:22
+Temperature: 24.10 Humidity: 44.30 Date/Time: 2024-03-15 11:06:31
+Temperature: 24.10 Humidity: 44.20 Date/Time: 2024-03-15 11:06:40
+Temperature: 24.10 Humidity: 43.90 Date/Time: 2024-03-15 11:06:49
+Temperature: 24.10 Humidity: 43.80 Date/Time: 2024-03-15 11:06:58
+Temperature: 24.00 Humidity: 43.80 Date/Time: 2024-03-15 11:07:07
+Temperature: 24.00 Humidity: 43.90 Date/Time: 2024-03-15 11:07:16
+Temperature: 23.90 Humidity: 43.70 Date/Time: 2024-03-15 11:07:25
+Temperature: 23.90 Humidity: 43.90 Date/Time: 2024-03-15 11:07:34
+Temperature: 23.80 Humidity: 43.60 Date/Time: 2024-03-15 11:07:43
+Temperature: 23.70 Humidity: 43.60 Date/Time: 2024-03-15 11:07:52
+Temperature: 23.70 Humidity: 43.70 Date/Time: 2024-03-15 11:08:01
+Temperature: 23.50 Humidity: 43.90 Date/Time: 2024-03-15 11:08:10
+Temperature: 23.50 Humidity: 44.00 Date/Time: 2024-03-15 11:08:19
+Temperature: 23.40 Humidity: 44.20 Date/Time: 2024-03-15 11:08:28
+Temperature: 23.20 Humidity: 44.30 Date/Time: 2024-03-15 11:08:37
+Temperature: 23.20 Humidity: 44.50 Date/Time: 2024-03-15 11:08:46
+Temperature: 23.10 Humidity: 44.60 Date/Time: 2024-03-15 11:08:55
+Temperature: 23.10 Humidity: 44.80 Date/Time: 2024-03-15 11:09:04
+Temperature: 23.00 Humidity: 44.90 Date/Time: 2024-03-15 11:09:13
+Temperature: 22.90 Humidity: 44.90 Date/Time: 2024-03-15 11:09:22
+Temperature: 22.80 Humidity: 44.90 Date/Time: 2024-03-15 11:09:31
+The device has restarted following a power cut
+Temperature: 22.70 Humidity: 45.30 Date/Time: 2024-03-15 11:09:45
+Temperature: 22.70 Humidity: 45.50 Date/Time: 2024-03-15 11:09:54
+Temperature: 22.70 Humidity: 45.60 Date/Time: 2024-03-15 11:10:03
+Temperature: 22.70 Humidity: 45.60 Date/Time: 2024-03-15 11:10:12
+Temperature: 22.60 Humidity: 45.50 Date/Time: 2024-03-15 11:10:21
+Temperature: 22.60 Humidity: 45.50 Date/Time: 2024-03-15 11:10:30
+Temperature: 22.50 Humidity: 45.70 Date/Time: 2024-03-15 11:10:39
+Temperature: 22.40 Humidity: 45.90 Date/Time: 2024-03-15 11:10:48
+Temperature: 22.40 Humidity: 46.00 Date/Time: 2024-03-15 11:10:57
+Temperature: 22.40 Humidity: 46.10 Date/Time: 2024-03-15 11:11:06
+Temperature: 22.40 Humidity: 46.10 Date/Time: 2024-03-15 11:11:15
+Temperature: 22.30 Humidity: 46.20 Date/Time: 2024-03-15 11:11:24
+The device has restarted following a power cut
+Temperature: 22.20 Humidity: 46.30 Date/Time: 2024-03-15 11:11:42
+Temperature: 22.20 Humidity: 46.60 Date/Time: 2024-03-15 11:11:51
+Temperature: 22.20 Humidity: 46.80 Date/Time: 2024-03-15 11:12:00
+Temperature: 22.20 Humidity: 46.80 Date/Time: 2024-03-15 11:12:09
+The device has restarted following a power cut
+Temperature: 22.10 Humidity: 46.90 Date/Time: 2024-03-15 11:12:28
+The device has restarted following a power cut
+Temperature: 22.10 Humidity: 47.10 Date/Time: 2024-03-15 11:12:41
+Temperature: 22.10 Humidity: 47.30 Date/Time: 2024-03-15 11:12:50
+The device has restarted following a power cut
+Temperature: 22.00 Humidity: 47.40 Date/Time: 2024-03-15 11:13:05
+Temperature: 22.00 Humidity: 47.30 Date/Time: 2024-03-15 11:13:14
+Temperature: 22.00 Humidity: 47.20 Date/Time: 2024-03-15 11:13:23
+Temperature: 22.00 Humidity: 47.20 Date/Time: 2024-03-15 11:13:32
+Temperature: 21.90 Humidity: 47.10 Date/Time: 2024-03-15 11:13:41
+The device has restarted following a power cut
+Temperature: 21.90 Humidity: 47.00 Date/Time: 2024-03-15 11:13:54
+Temperature: 21.80 Humidity: 46.90 Date/Time: 2024-03-15 11:14:03
+Temperature: 21.80 Humidity: 46.90 Date/Time: 2024-03-15 11:14:12
+Temperature: 21.80 Humidity: 46.80 Date/Time: 2024-03-15 11:14:21
+Temperature: 21.80 Humidity: 46.80 Date/Time: 2024-03-15 11:14:30
+The device has restarted following a power cut
+Temperature: 21.70 Humidity: 46.70 Date/Time: 2024-03-15 11:14:51
+Temperature: 21.70 Humidity: 46.70 Date/Time: 2024-03-15 11:15:00
+Temperature: 21.70 Humidity: 46.70 Date/Time: 2024-03-15 11:15:09
+Temperature: 21.70 Humidity: 46.90 Date/Time: 2024-03-15 11:15:18
+Temperature: 21.70 Humidity: 47.00 Date/Time: 2024-03-15 11:15:27
