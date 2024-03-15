@@ -1,4 +1,4 @@
-# Yet another Arduino DHT22 automatic recorder on SD card
+# Yet another Arduino DHT22 automatic recorder on SD card (but with RTC)
 
 ## Why ?
 Because I was not satisfied by other similar projects for my particular need: recording temperature and humidity every minute for very long periods of time (typically weeks) in remote parts of buildings. This device is so intended to be lost somewhere and survive power failures without much consequences on data stored. I've used it for recording two consecutive weeks of temperature and humidity without touching it, it worked. Current draw is very minimal and it can run for days/weeks on a powerbank.
