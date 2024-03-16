@@ -27,10 +27,10 @@ To what I understand, pinout for SD card must be strict on Arduino and only Chip
 ## The PCB that comes with the project (for Arduino Uno)
 ![](Pictures/PCB.png)
 
+The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it.
+
 ## Example of plot output
 ![](Matlab_Stuff/Plot.png)
-
-The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it.
 
 ## Funfact
 This device proved that the energy saving closure of a certain French university during two consecutive winters was only a political display since the heating remained on full blast during the entire closure. Thanks to this crap device I made new friends !
