@@ -25,7 +25,7 @@ To what I understand, pinout for SD card must be strict on Arduino and only Chip
 ![](Pictures/Schematic_DHT22.png)
 
 ## The PCB that comes with the project (for Arduino Uno)
-![](Pictures/PCB.png)
+![](PCB/PCB.png)
 
 The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it.
 
