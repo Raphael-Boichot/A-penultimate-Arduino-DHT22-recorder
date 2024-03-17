@@ -26,7 +26,7 @@ xlabel('Date/Time')
 ylabel('Temperature in °C')
 yyaxis right
 plot (dateTimeObj,humidity,'.r')
-ylabel('Relative humidity')
+ylabel('Relative humidity in %')
 set(gca,'FontSize',16)
 hold off
 saveas(gcf,'Plot.png');

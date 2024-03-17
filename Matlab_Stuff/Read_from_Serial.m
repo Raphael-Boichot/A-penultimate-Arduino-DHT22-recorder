@@ -4,7 +4,7 @@ close all
 disp('-----------------------------------------------------------')
 disp('|Beware, this code is for Matlab ONLY !!!                 |')
 disp('-----------------------------------------------------------')
-arduinoObj = serialport("COM6",115200,'TimeOut',3600); %set the Arduino com port here
+arduinoObj = serialport("COM3",115200,'TimeOut',3600); %set the Arduino com port here
 configureTerminator(arduinoObj,"CR/LF");
 flush(arduinoObj);
 arduinoObj.UserData = struct("Data",[],"Count",1);
@@ -31,7 +31,7 @@ while true
         ylabel('Temperature in °C')
         yyaxis right
         plot (dateTimeObj,humidity,'.r')
-        ylabel('Relative humidity')
+        ylabel('Relative humidity in %')
         set(gca,'FontSize',16)
         hold off
         drawnow
