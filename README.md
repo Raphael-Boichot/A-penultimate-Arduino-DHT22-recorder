@@ -15,12 +15,14 @@ Because I was not satisfied by other similar projects for my particular need: re
 - An [Arduino Uno](https://fr.aliexpress.com/item/1005006088733150.html), the cheaper the better;
 - A [generic microSD shield](https://fr.aliexpress.com/item/1005006059963950.html) or any other size if you do not use the custom PCB provided;
 - A [DHT22 module with everything integrated](https://fr.aliexpress.com/item/1005005996195284.html). The red AM2302 stuff is the one I used;
-- A [DS3231 RTC module](https://fr.aliexpress.com/item/1005005973972157.html). The extra chip on this board is just an independant 4kB flash chip that is not in use in this application (no idea what's the purpose in fact);
+- A [DS3231 RTC module](https://fr.aliexpress.com/item/1005005973972157.html). The extra chip on this board is just an independant 4kB flash chip that is not in use in this application (no idea what's the purpose in fact). It is recommended to [remove the resistor](Pictures/Resistor_to_remove.png) used for the janky charging circuit as the backup battery is not meant to be charged in fact;
 - Some [regular male pin headers](https://fr.aliexpress.com/item/1005002577212594.html). Must be soldered below the PCB as the clearance with the Uno shield is tight;
 - A [Custom PCB](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/tree/main/PCB) if you want to stay on the neat side. Order at [JLCPCB](https://jlcpcb.com/), it's cheap and custom clean for Eu citizens contrary to PCBWay or OSHPark;
 - 2 [regular 5 mm LEDs](https://fr.aliexpress.com/item/32848810276.html) (red and green) and two [through hole resistors](https://fr.aliexpress.com/item/32866216363.html) of about 220 Ohms (low value = high brighness).
 
 To what I understand, pinout for SD card must be strict on Arduino and only Chip Select pin (CS) can be moved, so refer to the pinout given in the project. If you use an SD shield with included prototyping board, CS may differ (it's generally 4, 6 or 10 by default).
+
+My own experience is that the backup battery has to be considered relevant for short accidental power loss only. The DS3231 RTC module is very seriously drifting if powered by its battery only (something like 1 hour per day). It is meant to be continuously powered to keep on time.
   
 ## The pinout (yes I like Powerpoint)
 ![](Pictures/Schematic_DHT22.png)
