@@ -1,7 +1,7 @@
 # Yet another Arduino DHT22 recorder on SD card (but with RTC)
 
 ## Why ?
-Because I was not satisfied by other similar projects for my particular need: recording temperature and humidity every minute for very long periods of time (typically weeks) in remote parts of buildings. This device is so intended to be lost somewhere and survive power failures without much consequences on data stored. I've used it for recording two consecutive weeks of temperature and humidity without touching it, it worked. Current draw is very minimal and it can run for days on a powerbank. The whole price with 5 custom PCBs included should stay below 20€ shipped to your door direct from China.
+Because I was not satisfied by other similar projects for my particular need: recording temperature and humidity every minute for very long periods of time (typically weeks) in remote parts of buildings. This device is so intended to be lost somewhere and survive power failures without much consequences on data stored. I've used it for recording two consecutive weeks of temperature and humidity without touching it, it worked. Current draw is very minimal and it can run for days on a powerbank. The whole price with 5 custom PCBs included should stay below 20€ shipped to your door direct through the silky road.
 
 ## How to use it ?
 - Install the [Arduino IDE](https://www.arduino.cc/en/software), the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library) and the [Adafruit RTClib library](https://github.com/adafruit/RTClib) from the IDE library manager;
