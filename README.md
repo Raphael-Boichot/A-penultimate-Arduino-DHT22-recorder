@@ -22,7 +22,7 @@ Because I was not satisfied by other similar projects for my particular need: re
 
 To what I understand, pinout for SD card must be strict on Arduino and only Chip Select pin (CS) can be moved, so refer to the pinout given in the project. If you use an SD shield with included prototyping board, CS may differ (it's generally 4, 6 or 10 by default).
 
-My own experience is that the backup battery has to be considered relevant for short accidental power loss only. The DS3231 RTC module is very seriously drifting if powered by its battery only (something like 1 hour per day). It is meant to be continuously powered to keep on time.
+My own experience is that the backup battery has to be considered relevant for short accidental power loss only. The DS3231 RTC module is very seriously drifting if powered by its battery only (something like **90 minutes per day** with a fresh battery !). **It is meant to be continuously powered to keep on time**, which is written nowhere...
   
 ## The pinout (yes I like Powerpoint)
 ![](Pictures/Schematic_DHT22.png)
