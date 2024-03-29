@@ -28,7 +28,10 @@ My own experience is that the backup battery has to be considered relevant for s
 ![](Pictures/Schematic_DHT22.png)
 
 ## The PCB that comes with the project (for Arduino Uno)
-![](PCB/PCB.png)
+![](PCB/Short/PCB.png)
+
+## TThe device as you will get it (for Arduino Uno)
+![](Pictures/Device_with_PCB.jpg)
 
 The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it.
 
