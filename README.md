@@ -28,10 +28,10 @@ My own experience is that the backup battery has to be considered relevant for s
 ## The pinout (yes I like Powerpoint)
 ![](Pictures/Schematic_DHT22.png)
 
-## The PCB that comes with the project (for Arduino Uno)
+## The PCB that comes with the project (Short version)
 ![](PCB/Short/PCB.png)
 
-## The device as you will get it (for Arduino Uno)
+## The device as you will get it (Short version)
 ![](Pictures/Device_with_PCB.jpg)
 
 The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it. It comes very pretty in blue I think. Two models of PCB are proposed: a short that do not hide the RESET button and a long with a deported RESET button. They both work the same.
