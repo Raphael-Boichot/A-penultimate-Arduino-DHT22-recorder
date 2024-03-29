@@ -17,6 +17,7 @@ Because I was not satisfied by other similar projects for my particular need: re
 - A [DHT22 module with everything integrated](https://fr.aliexpress.com/item/1005005996195284.html). The red AM2302 stuff is the one I used;
 - A [DS3231 RTC module](https://fr.aliexpress.com/item/1005005973972157.html). The extra chip on this board is just an independant 4kB flash chip that is not in use in this application (no idea what's the purpose in fact). It is recommended to [remove the resistor like in this image](Pictures/Resistor_to_remove.png) used for the janky charging circuit as the backup battery is not meant to be charged in fact;
 - Some [17 mm male pin headers](https://fr.aliexpress.com/item/1005006104110168.html). The clearance with the Arduino Uno shield is tight, so regular 11 mm pin headers are too short;
+- If you want to make the board entirely dismountable, use some [female regular pin headers](https://fr.aliexpress.com/item/1005006468451122.html) to connect the SD, RTC and DHT22 modules instead of soldering them directly;
 - A [Custom PCB](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/tree/main/PCB) if you want to stay on the neat side. Order at [JLCPCB](https://jlcpcb.com/), it's cheap and custom clean for Eu citizens contrary to PCBWay or OSHPark;
 - 2 [regular 5 mm LEDs](https://fr.aliexpress.com/item/32848810276.html) (red and green) and two [through hole resistors](https://fr.aliexpress.com/item/32866216363.html) of about 220 Ohms (low value = high brighness).
 
@@ -33,7 +34,7 @@ My own experience is that the backup battery has to be considered relevant for s
 ## TThe device as you will get it (for Arduino Uno)
 ![](Pictures/Device_with_PCB.jpg)
 
-The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it.
+The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it. It comes very pretty in blue I think. Two models of PCB are proposed: a short that do not hide the RESET button and a long with a deported RESET button. They both work the same.
 
 ## Example of plot output
 ![](Matlab_Stuff/Plot.png)
