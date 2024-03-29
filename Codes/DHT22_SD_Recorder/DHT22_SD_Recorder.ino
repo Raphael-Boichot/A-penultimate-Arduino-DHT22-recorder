@@ -39,6 +39,13 @@ void setup() {
   pinMode(RED_LED, OUTPUT);
   pinMode(GREEN_LED, OUTPUT);
   Serial.begin(115200);
+
+  digitalWrite(RED_LED, 1);
+  digitalWrite(GREEN_LED, 1);
+  delay(2500);
+  digitalWrite(RED_LED, 0);
+  digitalWrite(GREEN_LED, 0);
+
   def_LED = GREEN_LED;
   Serial.println(F("// By Raphaël BOICHOT, March 2024"));
   Serial.println(F("// This program comes with ABSOLUTELY NO WARRANTY;"));
