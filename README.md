@@ -28,8 +28,8 @@ My own experience is that the backup battery has to be considered relevant for s
 ## The pinout (yes I like Powerpoint)
 ![](Pictures/Schematic_DHT22.png)
 
-## The PCB that comes with the project (Short version)
-![](PCB/Short/PCB.png)
+## The PCBs that comes with the project (Two flavors)
+![](Pictures/PCB_in_two_flavors.jpg)
 
 ## The device as you will get it (Short version)
 ![](Pictures/Device_with_PCB.jpg)
