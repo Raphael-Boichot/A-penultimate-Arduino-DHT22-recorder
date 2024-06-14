@@ -5,7 +5,7 @@ Because I was not satisfied by other similar projects for my particular need: re
 
 ## How to use it ?
 - Install the [Arduino IDE](https://www.arduino.cc/en/software), the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library) and the [Adafruit RTClib library](https://github.com/adafruit/RTClib) from the IDE library manager;
-- Flash the [DHT22_SD_Set_RTC.ino](Codes/DHT22_SD_Set_RTC/DHT22_SD_Set_RTC.ino) code to the device, it will set the date/time of the RTC module from the computer. The green LED stays ON if everything is OK;
+- Flash the [DHT22_SD_Set_RTC.ino](Codes/DHT22_SD_Set_RTC/DHT22_SD_Set_RTC.ino) code to the device, it will set the date/time of the RTC module from the computer. The green LED stays ON if everything is OK. The serial must be set at 115200 bauds to check the output from Arduino IDE;
 - Then flash the [DHT22_SD_Recorder.ino](Codes/DHT22_SD_Recorder/DHT22_SD_Recorder.ino) code. It immediately starts recording. You can follow what happens on the Arduino IDE serial or use [Read_from_Serial.m](Matlab_Stuff/Read_from_Serial.m) to plot temperature and humidity in live from Matlab;
 - As long as green LED flashes only, everything is OK with the 3 modules. Any failure of one of them and the red LED flashes instead;
 - SD card can be removed at any time to plot data, the device does not care, no need to power cycle it to plug the SD card back;
