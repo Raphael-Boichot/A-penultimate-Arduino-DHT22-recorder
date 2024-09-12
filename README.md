@@ -45,5 +45,5 @@ The PCB comes with its json sources that can be edited with [EasyEDA std Edition
 ## Funfact
 This device proved that the energy saving closure of a certain French university during two consecutive winters was only a political display since the heating remained on full blast during the entire closure. Thanks to this crap device I made new friends !
 
-## Aknowledgement
+## Aknowledgements
 The author wants to thank Pierre Chautard, Eva Azogui, Jingxiang Cao and Daniele Palladino from Phelma School of Engineering, Grenoble INP, France, for the psychrometric chart module.
