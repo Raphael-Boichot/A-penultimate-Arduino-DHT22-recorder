@@ -40,11 +40,11 @@ The PCB comes with its json sources that can be edited with [EasyEDA std Edition
 
 ## Example of plot output vs time
 ![](Matlab_Stuff/Plot.png)
-This series of data has been recorded in a cellar during 3 weeks
+This series of data has been recorded in a cellar during 3 weeks. Data are treated with a 10 minutes moving average.
 
 ## Example of plot output in a psychrometric chart
 ![](Matlab_Stuff/Pimp.png)
-Same data than the preceding plot but presented differently
+Same data than the preceding plot but presented differently. Data are treated with a 10 minutes moving average.
 
 ## Funfact
 This device proved that the energy saving closure of a certain French university during two consecutive winters was only a political display since the heating remained on full blast during the entire closure. Thanks to this crap device I made new friends !
