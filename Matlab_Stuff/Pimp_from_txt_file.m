@@ -64,6 +64,17 @@ hold on
 
 plot(temperature,Absolute_humidity,'.m')
 
+%Winter comfort zone
+plot([16 17],[0.008 0.004],'--b')
+plot([17 24],[0.004 0.006],'--b')
+plot([24 22],[0.006 0.0125],'--b')
+plot([22 16],[0.0125 0.008],'--b')
+%Summer comfort zone
+plot([19 24],[0.0095 0.013],'--r')
+plot([24 26],[0.013 0.0065],'--r')
+plot([26 20],[0.0065 0.0045],'--r')
+plot([20 19],[0.0045 0.0095],'--r')
+
 % Tracer les températures
 w = 0*T;
 for i = 2:2:length(T)
