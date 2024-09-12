@@ -42,7 +42,7 @@ This series of data has been recorded in a cellar during 3 weeks
 
 ## Example of plot output in a psychrometric chart
 ![](Matlab_Stuff/Pimp.png)
-Same data than the preceding plot but présented differently
+Same data than the preceding plot but presented differently
 
 ## Funfact
 This device proved that the energy saving closure of a certain French university during two consecutive winters was only a political display since the heating remained on full blast during the entire closure. Thanks to this crap device I made new friends !
