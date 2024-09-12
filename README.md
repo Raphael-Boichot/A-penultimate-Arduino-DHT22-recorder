@@ -36,8 +36,14 @@ My own experience is that the backup battery has to be considered relevant for s
 
 The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it. It comes very pretty in blue I think. Two models of PCB are proposed: a short that do not hide the RESET button and a long with a deported RESET button. They both work the same.
 
-## Example of plot output
+## Example of plot output vs time
 ![](Matlab_Stuff/Plot.png)
+
+## Example of plot output in a psychrometric chart
+![](Matlab_Stuff/Pimp.png)
 
 ## Funfact
 This device proved that the energy saving closure of a certain French university during two consecutive winters was only a political display since the heating remained on full blast during the entire closure. Thanks to this crap device I made new friends !
+
+## Aknowledgement
+The author wants to thank Pierre Chautard, Eva Azogui, Jingxiang Cao and Daniele Palladino from Phelma School of Engineering, Grenoble INP, France, for the psychrometric chart module.
