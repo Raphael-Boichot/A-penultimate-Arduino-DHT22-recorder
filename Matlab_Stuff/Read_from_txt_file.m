@@ -2,10 +2,10 @@ clear
 clc
 fid = fopen('DATA.TXT','r');
 i=1;
-
+disp('Importing data, please wait...')
 while ~feof(fid)
     a=fgets(fid);
-    if not(isempty(strfind(a,'Temperature')))
+    if not(~contains(a,'Temperature'))
     %disp('DATA packet received !')
     offset=strfind(a,'Temperature:');
     temperature(i)=str2num(a(offset+12:offset+16));
@@ -18,6 +18,7 @@ while ~feof(fid)
     end
 end
 fclose(fid);  
+disp('Generating the plot...')
 figure('Position',[200 200 800 600]);
 hold on
 yyaxis left
@@ -29,6 +30,7 @@ plot (dateTimeObj,humidity,'.r')
 ylabel('Relative humidity in %')
 set(gca,'FontSize',16)
 hold off
+disp('Saving figure...')
 saveas(gcf,'Plot.png');
 
 
