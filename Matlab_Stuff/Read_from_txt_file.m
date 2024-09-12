@@ -6,7 +6,7 @@ i=1;
 while ~feof(fid)
     a=fgets(fid);
     if not(isempty(strfind(a,'Temperature')))
-    disp('DATA packet received !')
+    %disp('DATA packet received !')
     offset=strfind(a,'Temperature:');
     temperature(i)=str2num(a(offset+12:offset+16));
     offset=strfind(a,'Humidity:');
