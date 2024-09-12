@@ -10,6 +10,8 @@ Because I was not satisfied by other similar projects for my particular need: re
 - As long as green LED flashes only, everything is OK with the 3 modules. Any failure of one of them and the red LED flashes instead;
 - SD card can be removed at any time to plot data, the device does not care, no need to power cycle it to plug the SD card back;
 - When finished, data can be plotted from the SD card with [Read_from_txt_file.m](Matlab_Stuff/Read_from_txt_file.m), the Matlab code provided, but any other code would work as the data format is very simple;
+
+Codes provided to extract data may be easily adapted to GNU Octave or Scilab.
  
 ## Parts needed
 - An [Arduino Uno](https://fr.aliexpress.com/item/1005006088733150.html), the cheaper the better;
