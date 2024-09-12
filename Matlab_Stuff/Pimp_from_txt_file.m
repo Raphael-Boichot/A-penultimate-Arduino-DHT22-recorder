@@ -27,6 +27,8 @@ while ~feof(fid)
     end
 end
 fclose(fid); 
+temperature=movmean(temperature,10);
+humidity=movmean(humidity,10);
 Saturation_water_pressure=101325*exp(13.7-5120./(temperature+273));%Rankine formula
 Water_pressure=Saturation_water_pressure.*humidity/100;
 Absolute_humidity=0.622*Water_pressure./(101325-Water_pressure);

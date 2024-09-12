@@ -18,6 +18,8 @@ while ~feof(fid)
     end
 end
 fclose(fid);  
+temperature=movmean(temperature,10);
+humidity=movmean(humidity,10);
 disp('Generating the plot...')
 figure('Position',[200 200 800 600]);
 hold on

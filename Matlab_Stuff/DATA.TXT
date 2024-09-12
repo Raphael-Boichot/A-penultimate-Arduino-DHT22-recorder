@@ -1,16 +1,7 @@
 The device has restarted following a power cut
-
-
-
-
-
-
-
 The device has restarted following a power cut
 The device has restarted following a power cut
 Temperature: 28.90 Humidity: 62.00 Date/Time: 2024-08-24 21:13:06
-
-
 Temperature: 28.70 Humidity: 53.90 Date/Time: 2024-08-24 21:39:06
 Temperature: 28.70 Humidity: 52.70 Date/Time: 2024-08-24 21:40:06
 Temperature: 28.70 Humidity: 53.30 Date/Time: 2024-08-24 21:41:06
