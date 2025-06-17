@@ -3,8 +3,12 @@ clc
 close all
 warning 'off'
 disp('-----------------------------------------------------------')
-disp('|Beware, this code is for Matlab ONLY !!!                 |')
+disp('|   This code can be used with both Matlab or GNU Octave  |')
 disp('-----------------------------------------------------------')
+
+try %GNU Octave
+    pkg load instrument-control
+end
 
 list = serialportlist;
 valid_port=[];
@@ -12,7 +16,11 @@ protocol_failure=1;
 for i =1:1:length(list)
     try
         disp(['Testing port ',char(list(i)),'...'])
-        arduinoObj = serialport(char(list(i)),115200,'TimeOut',2);
+        try %GNU Octave
+            arduinoObj = serialport(char(list(i)),'baudrate',115200,'TimeOut',2);
+        catch %Matlab
+            arduinoObj = serialport(char(list(i)),115200,'TimeOut',2);
+        end
         response=readline(arduinoObj);
         if ~isempty(response)
             if not(isempty(strfind(response,'BOICHOT')))
@@ -29,12 +37,16 @@ for i =1:1:length(list)
 end
 
 if protocol_failure==0
-    arduinoObj = serialport(valid_port,115200,'TimeOut',3600); %set the Arduino com port here
+    try
+        arduinoObj = serialport(valid_port,'baudrate',115200,'TimeOut',2);
+    catch
+        arduinoObj = serialport(valid_port,115200,'TimeOut',2);
+    end
     configureTerminator(arduinoObj,"CR/LF");
     flush(arduinoObj);
-    arduinoObj.UserData = struct("Data",[],"Count",1);
+    %arduinoObj.UserData = struct("Data",[],"Count",1);
     i=1;
-    figure('Position',[200 200 800 600]);
+    figure('Position',[100 100 1000 800]);
     while true
         data = readline(arduinoObj);
         disp(data)
@@ -47,17 +59,34 @@ if protocol_failure==0
             humidity(i)=str2num(a(offset+10:offset+14));
             offset=strfind(a,'Date/Time:');
             Date=a(offset+11:end); %end-2 because LF/CR
-            dateTimeObj(i) = datetime(Date, 'InputFormat', 'yyyy-MM-dd HH:mm:ss');
+            try %Matlab
+                dateTimeObj(i) = datetime(Date, 'InputFormat', 'yyyy-MM-dd HH:mm:ss');
+            catch %GNU Octave
+                dateTimeObj(i) = i;
+            end
             i=i+1;
             hold on
-            yyaxis left
-            plot (dateTimeObj,temperature,'b.')
-            xlabel('Date/Time')
-            ylabel('Temperature in °C')
-            yyaxis right
-            plot (dateTimeObj,humidity,'.r')
-            ylabel('Relative humidity in %')
-            set(gca,'FontSize',16)
+            try %Matlab
+                yyaxis left
+                plot (dateTimeObj,temperature,'b.')
+                xlabel('Date/Time')
+                ylabel('Temperature in °C')
+                yyaxis right
+                plot (dateTimeObj,humidity,'.r')
+                ylabel('Relative humidity in %')
+                set(gca,'FontSize',16)
+            catch %GNU Octave
+                subplot(1,2,1);
+                plot (dateTimeObj,temperature,'b.')
+                xlabel('Sample')
+                ylabel('Temperature in °C')
+                set(gca,'FontSize',16)
+                subplot(1,2,2);
+                plot (dateTimeObj,humidity,'.r')
+                xlabel('Sample')
+                ylabel('Relative humidity in %')
+                set(gca,'FontSize',16)
+            end
             hold off
             drawnow
             saveas(gcf,'Plot.png');
