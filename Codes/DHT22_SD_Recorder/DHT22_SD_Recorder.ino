@@ -39,7 +39,11 @@ void setup() {
   pinMode(RED_LED, OUTPUT);
   pinMode(GREEN_LED, OUTPUT);
   Serial.begin(115200);
-
+  while (!Serial)
+    ;
+  Serial.println(F("// By Raphaël BOICHOT, March 2024"));
+  Serial.println(F("// This program comes with ABSOLUTELY NO WARRANTY;"));
+  Serial.println(F("// This is free software, and you are welcome to redistribute it"));
   digitalWrite(RED_LED, 1);
   digitalWrite(GREEN_LED, 1);
   delay(2500);
@@ -47,9 +51,6 @@ void setup() {
   digitalWrite(GREEN_LED, 0);
 
   def_LED = GREEN_LED;
-  Serial.println(F("// By Raphaël BOICHOT, March 2024"));
-  Serial.println(F("// This program comes with ABSOLUTELY NO WARRANTY;"));
-  Serial.println(F("// This is free software, and you are welcome to redistribute it"));
   Serial.println(F("// Initializing DHT22 sensor..."));
   dht.begin();
   if (isnan(dht.readTemperature()) || isnan(dht.readHumidity())) {
