@@ -40,7 +40,7 @@ The PCB comes with its json sources that can be edited with [EasyEDA std Edition
 
 ## Example of plot output vs time
 ![](Matlab_Stuff/Plot.png)
-This series of data has been recorded in an attic during 3 months. Data are treated with a 10 minutes moving average.
+This series of data has been recorded in an attic during 2 months. Data are treated with a 10 minutes moving average.
 
 ## Example of plot output in a psychrometric chart
 ![](Matlab_Stuff/Pimp.png)
