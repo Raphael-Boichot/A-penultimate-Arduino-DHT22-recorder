@@ -1,27 +1,43 @@
 clear
 clc
 fid = fopen('DATA.TXT','r');
-i=1;
 disp('Importing data, please wait...')
+
+% Preallocate
+N = 1e5;
+temperature = nan(1,N);
+humidity = nan(1,N);
+dateStrs = cell(1,N);   % use cell array instead of strings
+
+i = 1;
 while ~feof(fid)
-    a=fgets(fid);
-    if not(isempty(strfind(a,'Temperature')))
-        disp('DATA packet received !')
-        offset=strfind(a,'Temperature:');
-        temperature(i)=str2num(a(offset+12:offset+16));
-        offset=strfind(a,'Humidity:');
-        humidity(i)=str2num(a(offset+10:offset+14));
-        offset=strfind(a,'Date/Time:');
-        Date=a(offset+11:end-2); %end-2 because LF/CR
-        try
-            dateTimeObj(i) = datetime(Date, 'InputFormat', 'yyyy-MM-dd HH:mm:ss');
-        catch
-            dateTimeObj(i) = i;
-        end
-        i=i+1;
+    a = fgets(fid);
+    if ~isempty(strfind(a,'Temperature'))
+        offset = strfind(a,'Temperature:');
+        temperature(i) = str2double(a(offset+12:offset+16));
+
+        offset = strfind(a,'Humidity:');
+        humidity(i) = str2double(a(offset+10:offset+14));
+
+        offset = strfind(a,'Date/Time:');
+        dateStrs{i} = strtrim(a(offset+11:end)); % store as char in cell
+        i = i+1;
     end
 end
 fclose(fid);
+
+% Trim
+temperature = temperature(1:i-1);
+humidity = humidity(1:i-1);
+dateStrs = dateStrs(1:i-1);
+
+% Convert to datetime after loop
+try
+    dateTimeObj = datetime(dateStrs, 'InputFormat', 'yyyy-MM-dd HH:mm:ss');
+catch
+    dateTimeObj = 1:(i-1);
+end
+
 temperature=movmean(temperature,10);
 humidity=movmean(humidity,10);
 disp('Generating the plot...')

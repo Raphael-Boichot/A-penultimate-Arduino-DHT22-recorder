@@ -9,24 +9,36 @@ Taille = [1000,1000];
 % Taille_Letter = [8.5,11]*88;
 
 fid = fopen('DATA.TXT','r');
-i=1;
-
 disp('Importing data, please wait...')
+
+% Preallocate
+N = 1e5;
+temperature = nan(1,N);
+humidity = nan(1,N);
+dateStrs = cell(1,N);   % use cell array instead of strings
+
+i = 1;
 while ~feof(fid)
-    a=fgets(fid);
-    if not(~contains(a,'Temperature'))
-    %disp('DATA packet received !')
-    offset=strfind(a,'Temperature:');
-    temperature(i)=str2num(a(offset+12:offset+16));
-    offset=strfind(a,'Humidity:');
-    humidity(i)=str2num(a(offset+10:offset+14));
-    offset=strfind(a,'Date/Time:');
-    Date=a(offset+11:end-2); %end-2 because LF/CR
-    dateTimeObj(i) = datetime(Date, 'InputFormat', 'yyyy-MM-dd HH:mm:ss');
-    i=i+1;
+    a = fgets(fid);
+    if ~isempty(strfind(a,'Temperature'))
+        offset = strfind(a,'Temperature:');
+        temperature(i) = str2double(a(offset+12:offset+16));
+
+        offset = strfind(a,'Humidity:');
+        humidity(i) = str2double(a(offset+10:offset+14));
+
+        offset = strfind(a,'Date/Time:');
+        dateStrs{i} = strtrim(a(offset+11:end)); % store as char in cell
+        i = i+1;
     end
 end
-fclose(fid); 
+fclose(fid);
+
+% Trim
+temperature = temperature(1:i-1);
+humidity = humidity(1:i-1);
+dateStrs = dateStrs(1:i-1);
+
 temperature=movmean(temperature,10);
 humidity=movmean(humidity,10);
 Saturation_water_pressure=101325*exp(13.7-5120./(temperature+273));%Rankine formula
@@ -62,18 +74,30 @@ alpha(0.5)
 plot(T,w,'-k')
 hold on
 
-plot(temperature,Absolute_humidity,'.m')
+%plot(temperature,Absolute_humidity,'.k')
+N = numel(temperature);
+cmap = jet(N);   % or 'jet', 'hsv', 'turbo' (R2020b+), etc.
+scatter(temperature, Absolute_humidity, 15, cmap, 'filled')
 
-%Winter comfort zone
-plot([16 17],[0.008 0.0035],'--b')
-plot([17 24],[0.0035 0.006],'--b')
-plot([24 22],[0.006 0.0115],'--b')
-plot([22 16],[0.0115 0.008],'--b')
-%Summer comfort zone
-plot([19 24],[0.0095 0.013],'--r')
-plot([24 26],[0.013 0.0065],'--r')
-plot([26 20],[0.0065 0.0045],'--r')
-plot([20 19],[0.0045 0.0095],'--r')
+hold on;
+
+% --- Winter comfort zone polygon ---
+xWinter = [16 17 24 22 16];
+yWinter = [0.008 0.0035 0.006 0.0115 0.008];
+
+patch(xWinter, yWinter, 'b', ...
+    'FaceAlpha', 0.2, ...  % transparency
+    'EdgeColor', 'b', ...
+    'LineStyle', '--');
+
+% --- Summer comfort zone polygon ---
+xSummer = [19 24 26 20 19];
+ySummer = [0.0095 0.013 0.0065 0.0045 0.0095];
+
+patch(xSummer, ySummer, 'r', ...
+    'FaceAlpha', 0.2, ...
+    'EdgeColor', 'r', ...
+    'LineStyle', '--');
 
 % Tracer les températures
 w = 0*T;
@@ -225,7 +249,7 @@ ylabel(Y3,'Water partial pressure (Pa)')
 
 % % Enregistrer la fonction de rappel des mouvements de la souris
 % set(gcf, 'WindowButtonDownFcn', @mouseClicked);
-% 
+%
 %     function mouseClicked(~, ~)
 %         % Obtenir la position de la souris
 %         mousePos = get(gca, 'CurrentPoint');
@@ -237,7 +261,7 @@ ylabel(Y3,'Water partial pressure (Pa)')
 %         T_r = T_rosee_de_w(w);
 %         T_h = T_h_de_w(T,w);
 %         E = E_de_w(T,w);
-% 
+%
 %         % Afficher la valeur correspondant à la position de la souris
 %         if w < w_de_P_vs(T)
 %             info = ['T = ',   num2str(T),     '°C, ',       ...
