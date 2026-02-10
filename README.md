@@ -36,7 +36,10 @@ My own experience is that the backup battery has to be considered relevant for s
 ## The device as you will get it (Short version)
 ![](Pictures/Device_with_PCB.jpg)
 
-The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it. It comes very pretty in blue I think. Two models of PCB are proposed: a short that do not hide the RESET button and a long with a deported RESET button. They both work the same.
+## Protective shell to be used with the long PCB
+![](Pictures/Device_with_PCB.jpg)
+
+The PCB comes with its json sources that can be edited with [EasyEDA std Edition](https://easyeda.com/page/download) if you want to customize it. It comes very pretty in blue I think. Two models of PCB are proposed: a short that do not hide the RESET button and a long with a deported RESET button. They both work the same. **The 3D shell is designed for the long version only.**
 
 ## Example of plot output vs time
 ![](Matlab_Stuff/Plot.png)
