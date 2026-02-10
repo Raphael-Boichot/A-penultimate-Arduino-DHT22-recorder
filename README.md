@@ -33,7 +33,7 @@ My own experience is that the backup battery has to be considered relevant for s
 ## The PCBs that come with the project (Two flavors)
 ![](Pictures/PCB_in_two_flavors.jpg)
 
-## The device as you will get it (Short version)
+## The device as you will get it (short PCB)
 ![](Pictures/Device_with_PCB.jpg)
 
 ## Protective shell to be used with the long PCB
