@@ -4,7 +4,7 @@
 Because I was not satisfied by other similar projects for my particular need: recording temperature and humidity every minute for very long periods of time (typically weeks) in remote parts of buildings. This device is so intended to be lost somewhere and survive power failures without much consequences on data stored. I've used it for recording two consecutive weeks of temperature and humidity without touching it, it worked. Current draw is very minimal and it can run for days on a powerbank. The whole price with 5 custom PCBs included should stay below 20€ shipped to your door direct through the silky road.
 
 ## How to use it ?
-- Install the [Arduino IDE](https://www.arduino.cc/en/software), the [Adafruit sensor library](https://github.com/adafruit/Adafruit_Sensor), the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library) and the [Adafruit RTClib library](https://github.com/adafruit/RTClib) from the IDE library manager;
+- Install the [Arduino IDE](https://www.arduino.cc/en/software), the [Adafruit sensor library](https://github.com/adafruit/Adafruit_Sensor), the [Adafruit DHT library](https://github.com/adafruit/DHT-sensor-library), the [U8glib library for monochrome displays](https://github.com/olikraus/u8g2) and the [Adafruit RTClib library](https://github.com/adafruit/RTClib) from the IDE library manager;
 - Flash the [DHT22_SD_Set_RTC.ino](Codes/DHT22_SD_Set_RTC/DHT22_SD_Set_RTC.ino) code to the device, it will set the date/time of the RTC module from the computer. The green LED stays ON if everything is OK. The serial must be set at 115200 bauds to check the output from Arduino IDE;
 - Then flash the [DHT22_SD_Recorder.ino](Codes/DHT22_SD_Recorder/DHT22_SD_Recorder.ino) code. It immediately starts recording. You can follow what happens on the Arduino IDE serial or use [Read_from_Serial.m](Matlab_Stuff/Read_from_Serial.m) to plot temperature and humidity in live from Matlab;
 - As long as green LED flashes only, everything is OK with the 3 modules. Any failure of one of them and the red LED flashes instead;
@@ -22,7 +22,7 @@ Codes provided to extract data may be easily adapted to GNU Octave or Scilab.
 - If you want to make the board entirely dismountable, use some [female regular pin headers](https://fr.aliexpress.com/item/1005006468451122.html) to connect the SD, RTC and DHT22 modules instead of soldering them directly;
 - A [Custom PCB](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/tree/main/PCB) if you want to stay on the neat side. Order at [JLCPCB](https://jlcpcb.com/), it's cheap and custom clean for Eu citizens contrary to PCBWay or OSHPark;
 - 2 [regular 5 mm LEDs](https://fr.aliexpress.com/item/32848810276.html) (red and green) and two [through hole resistors](https://fr.aliexpress.com/item/32866216363.html) of about 220 Ohms (low value = high brighness).
-- In option, you can daisy chain an i2C display with the RTC module, for example this [0.96 inch SSD1306 128x96 pixels OLED](https://aliexpress.com/item/1005007389730469.html).
+- In option, you can daisy chain an i2C display with the RTC module, for example this [0.96 inch SSD1306 128x64 pixels OLED](https://aliexpress.com/item/1005007389730469.html).
 
 To what I understand, pinout for SD card must be strict on Arduino and only Chip Select pin (CS) can be moved, so refer to the pinout given in the project. If you use an SD shield with included prototyping board, CS may differ (it's generally 4, 6 or 10 by default and sometimes even not indicated on the board...).
 
@@ -30,6 +30,9 @@ My own experience is that the backup battery has to be considered relevant for s
   
 ## The pinout (yes I like Powerpoint)
 ![](Pictures/Schematic_DHT22.png)
+
+## Daisy chaining a 128x64 I2C display
+![](Pictures/Daisy_chaining_display.png)
 
 ## The PCBs that come with the project (Two flavors, long and short)
 ![](Pictures/PCB_in_two_flavors.jpg)
