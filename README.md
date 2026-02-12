@@ -40,6 +40,9 @@ My own experience is that the backup battery has to be considered relevant for s
 ## The device as you will get it (short PCB)
 ![](Pictures/Device_with_PCB.jpg)
 
+## Janky version with display (but you get the idea)
+![](Pictures/Device_with_PCB_and_display.jpg)
+
 ## Protective shell to be used with the long PCB
 ![](Pictures/Sensor_with_shell.jpg)
 Device is here secretly recording temperature.
