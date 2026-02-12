@@ -13,14 +13,16 @@ end
 list = serialportlist;
 valid_port=[];
 protocol_failure=1;
+response=[];
 for i =1:1:length(list)
     try
         disp(['Testing port ',char(list(i)),'...'])
         try %GNU Octave
-            arduinoObj = serialport(char(list(i)),'baudrate',115200,'TimeOut',2);
+            arduinoObj = serialport(char(list(i)),'baudrate',115200,'TimeOut',1);
         catch %Matlab
-            arduinoObj = serialport(char(list(i)),115200,'TimeOut',2);
+            arduinoObj = serialport(char(list(i)),115200,'TimeOut',1);
         end
+        pause(1)
         response=readline(arduinoObj);
         if ~isempty(response)
             if not(isempty(strfind(response,'BOICHOT')))
@@ -43,7 +45,7 @@ if protocol_failure==0
         arduinoObj = serialport(valid_port,115200,'TimeOut',2);
     end
     configureTerminator(arduinoObj,"CR/LF");
-    flush(arduinoObj);
+    %flush(arduinoObj);
     %arduinoObj.UserData = struct("Data",[],"Count",1);
     i=1;
     figure('Position',[100 100 1000 800]);
