@@ -22,6 +22,7 @@ Codes provided to extract data may be easily adapted to GNU Octave or Scilab.
 - If you want to make the board entirely dismountable, use some [female regular pin headers](https://fr.aliexpress.com/item/1005006468451122.html) to connect the SD, RTC and DHT22 modules instead of soldering them directly;
 - A [Custom PCB](https://github.com/Raphael-Boichot/A-penultimate-Arduino-DHT22-recorder/tree/main/PCB) if you want to stay on the neat side. Order at [JLCPCB](https://jlcpcb.com/), it's cheap and custom clean for Eu citizens contrary to PCBWay or OSHPark;
 - 2 [regular 5 mm LEDs](https://fr.aliexpress.com/item/32848810276.html) (red and green) and two [through hole resistors](https://fr.aliexpress.com/item/32866216363.html) of about 220 Ohms (low value = high brighness).
+- In option, you can daisy chain an i2C display with the RTC module, for example this [0.96 inch SSD1306 128x96 pixels OLED](https://aliexpress.com/item/1005007389730469.html).
 
 To what I understand, pinout for SD card must be strict on Arduino and only Chip Select pin (CS) can be moved, so refer to the pinout given in the project. If you use an SD shield with included prototyping board, CS may differ (it's generally 4, 6 or 10 by default and sometimes even not indicated on the board...).
 
