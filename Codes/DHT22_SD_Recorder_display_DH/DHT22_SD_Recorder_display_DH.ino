@@ -35,7 +35,7 @@ File myFile;
 // --- GLOBAL VARIABLES FOR DH CALCULATION ---
 float tempSum = 0;             // Sum of temperatures for the current hour
 int sampleCount = 0;           // Number of readings taken in the current hour
-float degreeHours = 0;         // Cumulative Degree Hours (DH)
+float discomfortdegreeHours = 0;         // Cumulative Degree Hours (DH)
 int lastHour = -1;             // To detect when a new hour starts
 const float THRESHOLD = 28.0;  // 28°C threshold, from French RE2020
 // https://www.ffbatiment.fr/techniques-batiment/reglementation-construction/reglementation-thermique-environnementale/dossier/re2020-confort-d-ete-et-indicateur-dh
@@ -140,40 +140,37 @@ void loop() {
 
 void updateOLED() {
   DateTime now = rtc.now();
-  u8x8.setFont(u8x8_font_7x14B_1x2_f);
-
-  // Line 1: Date (DD/MM/YYYY)
+  
+  // Row 0: Date
   u8x8.setCursor(0, 0);
-  if (now.day() < 10) u8x8.print('0');
-  u8x8.print(now.day());
-  u8x8.print('/');
-  if (now.month() < 10) u8x8.print('0');
-  u8x8.print(now.month());
-  u8x8.print('/');
+  if (now.day() < 10) u8x8.print('0'); u8x8.print(now.day()); u8x8.print('/');
+  if (now.month() < 10) u8x8.print('0'); u8x8.print(now.month()); u8x8.print('/');
   u8x8.print(now.year());
 
-  // Line 2: Time
+  // Row 2: Time + Blinking SD Alert
   u8x8.setCursor(0, 2);
-  if (now.hour() < 10) u8x8.print('0');
-  u8x8.print(now.hour());
-  u8x8.print(':');
-  if (now.minute() < 10) u8x8.print('0');
-  u8x8.print(now.minute());
-  u8x8.print(':');
-  if (now.second() < 10) u8x8.print('0');
-  u8x8.print(now.second());
+  if (now.hour() < 10) u8x8.print('0'); u8x8.print(now.hour()); u8x8.print(':');
+  if (now.minute() < 10) u8x8.print('0'); u8x8.print(now.minute());
+  
+  if (!sd_ok) {
+    if (now.second() % 2 == 0) u8x8.print(F("  [SD!]")); 
+    else u8x8.print(F("       ")); 
+  } else {
+    u8x8.print(F("       "));
+  }
 
-  // Line 3: RTC & SD Status (BIG FONT)
+  // Row 4: DDH Calculation
   u8x8.setCursor(0, 4);
-  u8x8.print(sd_ok ? F("SD:OK ") : F("SD:!! "));
-  u8x8.print(rtc_ok ? F("RTC:OK") : F("RTC:!!"));
+  u8x8.print(F("DDH: "));
+  u8x8.print(discomfortdegreeHours, 1);
+  u8x8.print(F("   ")); 
 
-  // Line 4: Live Sensors & DH
+  // Row 6: Temperature & Humidity
   u8x8.setCursor(0, 6);
   u8x8.print(dht.readTemperature(), 1);
   u8x8.print(F("C "));
-  u8x8.print(degreeHours, 1);  // Display DH with 1 decimal
-  u8x8.print(F("DH"));
+  u8x8.print(dht.readHumidity(), 0);
+  u8x8.print(F("%"));
 }
 
 void data_logging() {
@@ -201,7 +198,7 @@ void data_logging() {
       float averageTemp = tempSum / sampleCount;
       // If average is above threshold, add the difference to DH
       if (averageTemp > THRESHOLD) {
-        degreeHours += (averageTemp - THRESHOLD);
+        discomfortdegreeHours += (averageTemp - THRESHOLD);
       }
     }
     // Reset counters for the new hour
@@ -222,7 +219,7 @@ void data_logging() {
 
   // Create the final data string including DH
   Data = "Temperature: " + Temperature + " Humidity: " + Humidity + " Date/Time: ";
-  Data = Data + formattedDate + " | DH: " + String(degreeHours, 2);
+  Data = Data + formattedDate + " | DH: " + String(discomfortdegreeHours, 2);
 
 
   Serial.println(Data);
