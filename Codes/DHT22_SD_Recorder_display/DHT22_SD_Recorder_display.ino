@@ -4,8 +4,8 @@
   to be used with the following libraries:
   https://github.com/adafruit/DHT-sensor-library
   https://github.com/adafruit/RTClib
-	https://github.com/olikraus/u8g2
-  128x64 pixels OLED daisy chained to the RTC module
+  https://github.com/olikraus/u8g2 (this tiny library is the only possible due to Arduino memory limitation)
+  128x64 pixels OLED daisy chained to the RTC module (see schematic)
 ------------------------------------------------------------------------------------------------------
   pinout Arduino to SD   |  Arduino to DHT22   |    Arduino to LEDS        |   Arduino to RTC (DS3231)
   GND<->GND              |  GND<->GND          |    GND<->led cathodes     |   A4 or SDA<->SCL
@@ -189,4 +189,5 @@ void data_logging() {
     myFile.println(Data);
     myFile.close();
   }
+
 }
