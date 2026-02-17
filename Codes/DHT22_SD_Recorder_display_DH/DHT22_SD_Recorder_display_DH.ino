@@ -37,8 +37,9 @@ float tempSum = 0;             // Sum of temperatures for the current hour
 int sampleCount = 0;           // Number of readings taken in the current hour
 float degreeHours = 0;         // Cumulative Degree Hours (DH)
 int lastHour = -1;             // To detect when a new hour starts
-const float THRESHOLD = 20.0;  // Your 28°C threshold
-// set of variable for calculating the degre.hour
+const float THRESHOLD = 28.0;  // 28°C threshold, from French RE2020
+// https://www.ffbatiment.fr/techniques-batiment/reglementation-construction/reglementation-thermique-environnementale/dossier/re2020-confort-d-ete-et-indicateur-dh
+// set of variables for calculating the degre.hour
 
 int RED_LED = 5;
 int GREEN_LED = 4;
@@ -243,3 +244,4 @@ void data_logging() {
     myFile.close();
   }
 }
+
