@@ -20,7 +20,7 @@ while ~feof(fid)
         humidity(i) = str2double(a(offset+10:offset+14));
 
         offset = strfind(a,'Date/Time:');
-        dateStrs{i} = strtrim(a(offset+11:end)); % store as char in cell
+        dateStrs{i} = strtrim(a(offset+11:offset+29)); % store as char in cell
         i = i+1;
     end
 end

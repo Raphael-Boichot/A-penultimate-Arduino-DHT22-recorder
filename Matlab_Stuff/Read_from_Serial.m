@@ -60,7 +60,10 @@ if protocol_failure==0
             offset=strfind(a,'Humidity:');
             humidity(i)=str2num(a(offset+10:offset+14));
             offset=strfind(a,'Date/Time:');
-            Date=a(offset+11:end); %end-2 because LF/CR
+            Date=a(offset+11:offset+29); %end-2 because LF/CR
+            offset=strfind(a,'DH:');
+            DH=a(offset+4:end); %end-2 because LF/CR
+
             try %Matlab
                 dateTimeObj(i) = datetime(Date, 'InputFormat', 'yyyy-MM-dd HH:mm:ss');
             catch %GNU Octave
@@ -89,6 +92,7 @@ if protocol_failure==0
                 ylabel('Relative humidity in %')
                 set(gca,'FontSize',16)
             end
+            title(['Cumulative discomfort degree.hours>28°C: ',DH])
             hold off
             drawnow
             saveas(gcf,'Plot.png');
