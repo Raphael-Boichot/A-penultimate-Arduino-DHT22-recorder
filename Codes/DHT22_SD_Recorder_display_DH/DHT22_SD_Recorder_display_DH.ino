@@ -150,7 +150,8 @@ void updateOLED() {
   // Row 2: Time + Blinking SD Alert
   u8x8.setCursor(0, 2);
   if (now.hour() < 10) u8x8.print('0'); u8x8.print(now.hour()); u8x8.print(':');
-  if (now.minute() < 10) u8x8.print('0'); u8x8.print(now.minute());
+  if (now.minute() < 10) u8x8.print('0'); u8x8.print(now.minute()); u8x8.print(':');
+  if (now.second() < 10) u8x8.print('0'); u8x8.print(now.second()); 
   
   if (!sd_ok) {
     if (now.second() % 2 == 0) u8x8.print(F("  [SD!]")); 
@@ -162,14 +163,14 @@ void updateOLED() {
   // Row 4: DDH Calculation
   u8x8.setCursor(0, 4);
   u8x8.print(F("DDH: "));
-  u8x8.print(discomfortdegreeHours, 1);
+  u8x8.print(discomfortdegreeHours, 0);
   u8x8.print(F("   ")); 
 
   // Row 6: Temperature & Humidity
   u8x8.setCursor(0, 6);
   u8x8.print(dht.readTemperature(), 1);
   u8x8.print(F("C "));
-  u8x8.print(dht.readHumidity(), 0);
+  u8x8.print(dht.readHumidity(), 1);
   u8x8.print(F("%"));
 }
 
